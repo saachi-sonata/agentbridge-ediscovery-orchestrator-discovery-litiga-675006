@@ -1,0 +1,379 @@
+{
+  "id": "tpl-1358794015",
+  "name": "eDiscovery Orchestrator • Discovery (Litigation)",
+  "description": "eDiscovery Orchestrator • Discovery (Litigation) summarizes filings and redacts logs; applies decision gates and observability; orchestrates via Records to accelerate filing.",
+  "industry": "Legal & Compliance",
+  "pattern": "Plan-Execute",
+  "complexity": "Advanced",
+  "rating": 4.9,
+  "downloads": 24651,
+  "favorites": 627,
+  "executionTime": "9 min",
+  "tags": [
+    "privacy",
+    "contract",
+    "plan-execute",
+    "legal"
+  ],
+  "steps": [
+    {
+      "id": "intake",
+      "name": "Matter Intake",
+      "description": "Collect, validate and normalize emails from GRC; attach a runId and timestamp for traceability."
+    },
+    {
+      "id": "plan-0",
+      "name": "Plan",
+      "description": "Execute plan phase for the Plan-Execute pattern: persist interim state, enforce guardrails, and emit structured JSON results."
+    },
+    {
+      "id": "execute-1",
+      "name": "Execute",
+      "description": "Execute execute phase for the Plan-Execute pattern: persist interim state, enforce guardrails, and emit structured JSON results."
+    },
+    {
+      "id": "ingestion-0",
+      "name": "Ingestion",
+      "description": "Ingestion across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability."
+    },
+    {
+      "id": "entity-extraction-1",
+      "name": "Entity Extraction",
+      "description": "Entity Extraction across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability."
+    },
+    {
+      "id": "policy-check-2",
+      "name": "Policy Check",
+      "description": "Policy Check across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability."
+    },
+    {
+      "id": "risk-scoring-3",
+      "name": "Risk Scoring",
+      "description": "Risk Scoring across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability."
+    },
+    {
+      "id": "classification-4",
+      "name": "Classification",
+      "description": "Classification across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability."
+    },
+    {
+      "id": "finalize",
+      "name": "Privilege Log",
+      "description": "Assemble final payload with status, artifacts, KPIs and audit trail; store to DMS; return response JSON for the client."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "intake",
+      "type": "agentbridge",
+      "data": {
+        "label": "Matter Intake",
+        "description": "Collect, validate and normalize emails from GRC; attach a runId and timestamp for traceability.",
+        "nodeType": "input",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 60,
+        "y": 120
+      }
+    },
+    {
+      "id": "plan-0",
+      "type": "agentbridge",
+      "data": {
+        "label": "Plan",
+        "description": "Execute plan phase for the Plan-Execute pattern: persist interim state, enforce guardrails, and emit structured JSON results.",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 310,
+        "y": 120
+      }
+    },
+    {
+      "id": "execute-1",
+      "type": "agentbridge",
+      "data": {
+        "label": "Execute",
+        "description": "Execute execute phase for the Plan-Execute pattern: persist interim state, enforce guardrails, and emit structured JSON results.",
+        "nodeType": "mcp",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 560,
+        "y": 120
+      }
+    },
+    {
+      "id": "ingestion-0",
+      "type": "agentbridge",
+      "data": {
+        "label": "Ingestion",
+        "description": "Ingestion across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability.",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 810,
+        "y": 120
+      }
+    },
+    {
+      "id": "entity-extraction-1",
+      "type": "agentbridge",
+      "data": {
+        "label": "Entity Extraction",
+        "description": "Entity Extraction across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability.",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 1060,
+        "y": 120
+      }
+    },
+    {
+      "id": "policy-check-2",
+      "type": "agentbridge",
+      "data": {
+        "label": "Policy Check",
+        "description": "Policy Check across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability.",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 1310,
+        "y": 120
+      }
+    },
+    {
+      "id": "risk-scoring-3",
+      "type": "agentbridge",
+      "data": {
+        "label": "Risk Scoring",
+        "description": "Risk Scoring across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability.",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 1560,
+        "y": 120
+      }
+    },
+    {
+      "id": "classification-4",
+      "type": "agentbridge",
+      "data": {
+        "label": "Classification",
+        "description": "Classification across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability.",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 1810,
+        "y": 120
+      }
+    },
+    {
+      "id": "finalize",
+      "type": "agentbridge",
+      "data": {
+        "label": "Privilege Log",
+        "description": "Assemble final payload with status, artifacts, KPIs and audit trail; store to DMS; return response JSON for the client.",
+        "nodeType": "output",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 2060,
+        "y": 120
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-0",
+      "source": "intake",
+      "target": "plan-0",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-1",
+      "source": "plan-0",
+      "target": "execute-1",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-2",
+      "source": "execute-1",
+      "target": "ingestion-0",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-3",
+      "source": "ingestion-0",
+      "target": "entity-extraction-1",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-4",
+      "source": "entity-extraction-1",
+      "target": "policy-check-2",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-5",
+      "source": "policy-check-2",
+      "target": "risk-scoring-3",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-6",
+      "source": "risk-scoring-3",
+      "target": "classification-4",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-7",
+      "source": "classification-4",
+      "target": "finalize",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    }
+  ],
+  "preview": "Matter Intake → Plan → Execute → Ingestion → Entity Extraction → Policy Check → Risk Scoring → Classification → Privilege Log",
+  "featured": true,
+  "createdAt": "2025-04-19T18:24:07.397Z",
+  "author": "AgentBridge Team",
+  "deployments": 2499,
+  "lastDeployed": "2026-03-22T20:24:13.392Z",
+  "configuration": {
+    "provider": "nvidia",
+    "region": "us-west-2",
+    "compute": "memory-optimized"
+  },
+  "healthStatus": "degraded",
+  "deploymentCount": 1255,
+  "githubRepo": "https://github.com/agentbridge/ediscovery-orchestrator-•-discovery-(litigation)",
+  "maintainer": "AgentBridge Team",
+  "agenticLayers": {
+    "reasoning": {
+      "modelType": "gpt-4o",
+      "reasoningPattern": "ReAct",
+      "contextWindow": 128000,
+      "memorySystem": "hybrid",
+      "decisionFramework": "Multi-Criteria Decision Analysis"
+    },
+    "orchestration": {
+      "workflowEngine": "n8n",
+      "coordinationPattern": "centralized",
+      "failoverStrategy": "retry",
+      "loadBalancing": "intelligent"
+    },
+    "protocol": {
+      "communicationProtocol": "MCP",
+      "messageFormat": "JSON",
+      "authenticationMethod": "OAuth2",
+      "encryptionStandard": "AES-256"
+    },
+    "governance": {
+      "policyEngine": "OPA",
+      "complianceStandards": [
+        "SOC2",
+        "GDPR"
+      ],
+      "auditTrail": true,
+      "riskAssessment": "medium",
+      "dataClassification": "internal"
+    },
+    "observability": {
+      "metricsCollection": "Prometheus",
+      "loggingFramework": "ELK",
+      "tracingSystem": "Jaeger",
+      "alertingRules": [],
+      "dashboardConfig": {
+        "layout": "grid",
+        "widgets": [
+          "metrics",
+          "logs",
+          "traces"
+        ],
+        "refreshInterval": 30
+      }
+    },
+    "intelligence": {
+      "learningCapability": "online",
+      "knowledgeBase": "vector-db",
+      "adaptationMechanism": "ml-based",
+      "performanceOptimization": "ai-driven"
+    }
+  },
+  "businessFunction": "data-preparation-node",
+  "autonomyLevel": "semi-autonomous",
+  "cognitiveCapabilities": [
+    {
+      "name": "Pattern Recognition",
+      "description": "Identifies patterns in business processes",
+      "confidenceLevel": 0.85,
+      "lastUpdated": "2026-04-13T18:24:07.435Z"
+    }
+  ],
+  "roiMetrics": {
+    "costSavings": 67614,
+    "timeReduction": 81,
+    "accuracyImprovement": 18,
+    "throughputIncrease": 56,
+    "errorReduction": 16
+  },
+  "complianceFramework": {
+    "standards": [
+      "SOC2",
+      "GDPR",
+      "ISO27001"
+    ],
+    "certifications": [
+      "SOC2 Type II"
+    ],
+    "auditFrequency": "monthly",
+    "lastAudit": "2026-03-20T15:52:06.032Z"
+  },
+  "scalingPolicy": {
+    "minInstances": 1,
+    "maxInstances": 10,
+    "scaleUpThreshold": 80,
+    "scaleDownThreshold": 20,
+    "cooldownPeriod": 300
+  }
+}
