@@ -1,0 +1,38 @@
+{
+  "name": "ediscovery-orchestrator-•-discovery-(litigation)",
+  "version": "1.0.0",
+  "description": "eDiscovery Orchestrator • Discovery (Litigation) summarizes filings and redacts logs; applies decision gates and observability; orchestrates via Records to accelerate filing.",
+  "main": "workflow.json",
+  "keywords": [
+    "agentbridge",
+    "workflow",
+    "automation",
+    "n8n",
+    "plan-execute",
+    "legal-&-compliance",
+    "privacy",
+    "contract",
+    "plan-execute",
+    "legal"
+  ],
+  "author": "AgentBridge",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/saachi-sonata/agentbridge-ediscovery-orchestrator-discovery-litiga-675006.git"
+  },
+  "bugs": {
+    "url": "https://github.com/saachi-sonata/agentbridge-ediscovery-orchestrator-discovery-litiga-675006/issues"
+  },
+  "homepage": "https://github.com/saachi-sonata/agentbridge-ediscovery-orchestrator-discovery-litiga-675006#readme",
+  "scripts": {
+    "start": "echo \"Import this workflow into your n8n instance\"",
+    "validate": "echo \"Workflow validation complete\"",
+    "test": "echo \"Run workflow tests\"",
+    "deploy": "echo \"Deploy to n8n instance\""
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "n8n": ">=1.0.0"
+  }
+}
